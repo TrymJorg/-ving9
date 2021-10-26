@@ -1,0 +1,44 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Oct 19 08:39:54 2021
+
+@author: trymjorgensen
+"""
+
+class flervalgspørsmål:
+    
+    def __init__(self,spørsmål,alternativer,riktig_svar):
+        self.spørsmål = spørsmål
+        self.alternativer = alternativer
+        self.riktig_svar = riktig_svar
+    
+    def __str__(self):
+        return self.spørsmål + str(self.alternativer)
+    
+    def sjekk_svar(self):
+        brukerens_svar = int(input("Hvilket av alternativene er riktig?: "))
+        if brukerens_svar == self.riktig_svar:
+            return 1
+        else:
+            return 0
+
+
+
+spørsmål_1 =flervalgspørsmål("Hvilket fotballag vant Premier League i 19/20 sesongen?",("1: Liverpool","2: Man Utd","3: Chelsea","4: West Brom"),1)
+spørsmål_2 =flervalgspørsmål("Hva er 10*10?", ("1: 1000","2: 10","3: 100") , 3)
+print(spørsmål_1)
+if spørsmål_1.sjekk_svar() == 1:
+    print("RETT")
+else:
+    print("FEIL")
+    
+print("\n")
+
+print(spørsmål_2)
+if spørsmål_2.sjekk_svar() ==1:
+    print("RETT")
+else:
+    print("FEIL")
+
+    
